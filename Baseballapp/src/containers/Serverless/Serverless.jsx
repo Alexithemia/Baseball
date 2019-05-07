@@ -15,17 +15,18 @@ class Serverless extends Component {
       gamePosition: 0
     };
 
-    this.handleSubmit = this.handleOut.bind(this);
-    this.handleInputChange = this.handleRun.bind(this);
+    this.handleOut = this.handleOut.bind(this);
+    this.handleRun = this.handleRun.bind(this);
   }
 
   handleOut(e) {
-    this.setState({ outs: this.state.outs + 1 });
-    if (this.state.outs === 3) {
-      this.setState({ outs: 0 });
-      this.setState({ innings: [...this.state.innings, 0] });
-      this.setState({ gamePosition: this.state.gamePosition + 1 });
-    }
+    this.setState({ outs: this.state.outs + 1 }, () => {
+      if (this.state.outs === 3) {
+        this.setState({ outs: 0 });
+        this.setState({ innings: [...this.state.innings, 0] });
+        this.setState({ gamePosition: this.state.gamePosition + 1 });
+      }
+    })
   }
 
   handleRun(e) {
@@ -42,7 +43,7 @@ class Serverless extends Component {
   render() {
     return (
       <div className="RecordContainer">
-        <ScoreBoard innings={this.state.innings} homeTotal={this.state.homeTotal} vistorTotal={this.state.vistorTotal} outs={this.state.outs} />
+        <ScoreBoard innings={this.state.innings} homeTotal={this.state.homeTotal} visitorTotal={this.state.vistorTotal} outs={this.state.outs} />
         <Buttons out={this.handleOut} run={this.handleRun} />
       </div>
     )
