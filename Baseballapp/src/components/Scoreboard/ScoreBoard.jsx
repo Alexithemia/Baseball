@@ -27,7 +27,8 @@ const ScoreBoard = (props) => {
           <td>{props.homeTotal}</td>
         </tr>
       </table>
-      <div>Outs: {props.outs}</div>
+      <div hidden={props.end}>Outs: {props.outs}</div>
+      <div hidden={!props.end}>Game Over! {props.visitorTotal > props.homeTotal ? 'Visitor Team Wins!' : 'Home Team Wins!'}</div>
     </div>
   );
 }
