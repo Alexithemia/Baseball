@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ScoreBoard from '../../components/ScoreBoard';
+import ScoreBoard from '../../components/Scoreboard';
 import Buttons from '../../components/Buttons';
 
 class Serverless extends Component {
@@ -20,11 +20,11 @@ class Serverless extends Component {
   }
 
   handleOut(e) {
-    this.setState({ outs: this.state.outs += 1 });
+    this.setState({ outs: this.state.outs + 1 });
     if (this.state.outs === 3) {
       this.setState({ outs: 0 });
       this.setState({ innings: [...this.state.innings, 0] });
-      this.setState({ gamePosition: this.state.gamePosition += 1 });
+      this.setState({ gamePosition: this.state.gamePosition + 1 });
     }
   }
 
@@ -33,9 +33,9 @@ class Serverless extends Component {
     tempInnings[this.state.gamePosition] += 1;
     this.setState({ innings: tempInnings });
     if ((this.state.gamePosition % 2) === 0) {
-      this.setState({ vistorTotal: this.state.vistorTotal += 1 });
+      this.setState({ vistorTotal: this.state.vistorTotal + 1 });
     } else {
-      this.setState({ homeTotal: this.state.homeTotal += 1 });
+      this.setState({ homeTotal: this.state.homeTotal + 1 });
     }
   }
 
