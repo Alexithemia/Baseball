@@ -5,7 +5,7 @@ import Buttons from '../../components/Buttons';
 
 class Serverless extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       vistorTotal: 0,
@@ -42,7 +42,7 @@ class Serverless extends Component {
   render() {
     return (
       <div className="RecordContainer">
-        <ScoreBoard innings={this.props.innings} homeTotal={this.props.homeTotal} vistorTotal={this.props.vistorTotal} />
+        <ScoreBoard innings={this.state.innings} homeTotal={this.state.homeTotal} vistorTotal={this.state.vistorTotal} outs={this.state.outs} />
         <Buttons out={this.handleOut} run={this.handleRun} />
       </div>
     )
