@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Router>
         <>
-          <Header />
           <div className="mainContainer">
             <Switch>
               <Route exact={true} path='/' component={Serverless} />

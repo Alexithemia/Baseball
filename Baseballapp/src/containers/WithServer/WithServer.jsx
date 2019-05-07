@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class WithServer extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      userInput: '',
-      passwordInput: ''
+
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +22,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="loginContainer">
+      <div className="RecordContainer">
 
       </div>
     )
@@ -31,4 +30,4 @@ class Login extends Component {
 };
 
 
-export default Login;
+export default WithServer;

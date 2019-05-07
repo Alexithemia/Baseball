@@ -1,2 +1,2 @@
-import Serverless from './Serverless';
-export default Serverless;
+import WithServer from './WithServer';
+export default WithServer;
