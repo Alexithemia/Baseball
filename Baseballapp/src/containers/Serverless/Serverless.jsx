@@ -59,7 +59,7 @@ class Serverless extends Component {
 
   render() {
     return (
-      <div className="RecordContainer">
+      <div className="recordContainer">
         <ScoreBoard innings={this.state.innings} homeTotal={this.state.homeTotal} visitorTotal={this.state.vistorTotal} outs={this.state.outs} end={this.state.gameEnd} />
         <Buttons out={this.handleOut} run={this.handleRun} end={this.state.gameEnd} newGame={this.handleNewGame} />
       </div>
