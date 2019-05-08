@@ -1,6 +1,17 @@
 .recordContainer{
   display:flex;
   flex-direction: column;
+  .buttons{
+    button{
+      margin:2px;
+    }
+  }
+}
+
+.navigation{
+  button{
+    margin:2px;
+  }
 }
 
 .scoreBoard{

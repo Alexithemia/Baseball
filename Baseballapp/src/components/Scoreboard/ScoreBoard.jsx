@@ -17,16 +17,16 @@ const ScoreBoard = (props) => {
         <tbody>
           <tr>
             <td>Visitor</td>
-            <td>{props.innings[0] || props.innings[0] === 0 ? props.innings[0] : ''}</td>
-            <td>{props.innings[2] || props.innings[2] === 0 ? props.innings[2] : ''}</td>
-            <td>{props.innings[4] || props.innings[4] === 0 ? props.innings[4] : ''}</td>
+            <td bgcolor={props.position === 0 ? "yellow" : ""}>{props.innings[0] || props.innings[0] === 0 ? props.innings[0] : ''}</td>
+            <td bgcolor={props.position === 2 ? "yellow" : ""}>{props.innings[2] || props.innings[2] === 0 ? props.innings[2] : ''}</td>
+            <td bgcolor={props.position === 4 ? "yellow" : ""}>{props.innings[4] || props.innings[4] === 0 ? props.innings[4] : ''}</td>
             <td>{props.visitorTotal}</td>
           </tr>
           <tr>
             <td>Home</td>
-            <td>{props.innings[1] || props.innings[1] === 0 ? props.innings[1] : ''}</td>
-            <td>{props.innings[3] || props.innings[3] === 0 ? props.innings[3] : ''}</td>
-            <td>{props.innings[5] || props.innings[5] === 0 ? props.innings[5] : ''}</td>
+            <td bgcolor={props.position === 1 ? "yellow" : ""}>{props.innings[1] || props.innings[1] === 0 ? props.innings[1] : ''}</td>
+            <td bgcolor={props.position === 3 ? "yellow" : ""}>{props.innings[3] || props.innings[3] === 0 ? props.innings[3] : ''}</td>
+            <td bgcolor={props.position === 5 ? "yellow" : ""}>{props.innings[5] || props.innings[5] === 0 ? props.innings[5] : ''}</td>
             <td>{props.homeTotal}</td>
           </tr>
         </tbody>

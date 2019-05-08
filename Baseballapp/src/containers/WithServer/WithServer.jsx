@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { run, out, newGame } from '../../actions';
+import { runServer, outServer, newGameServer, uploadGame } from '../../actions';
 
 import ScoreBoard from '../../components/Scoreboard';
 import Buttons from '../../components/Buttons';
 
-class WithRedux extends Component {
+class WithServer extends Component {
+
+  componentDidMount() {
+    this.props.uploadGame(this.props)
+  }
 
   render() {
     return (
@@ -31,20 +35,23 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleRun: () => {
-      return dispatch(run())
+      return dispatch(runServer())
     },
     handleOut: () => {
-      return dispatch(out())
+      return dispatch(outServer())
     },
     handleNewGame: () => {
-      return dispatch(newGame())
+      return dispatch(newGameServer())
+    },
+    uploadGame: (props) => {
+      return dispatch(uploadGame(props))
     }
   }
 }
 
-WithRedux = connect(
+WithServer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(WithRedux);
+)(WithServer);
 
-export default WithRedux;
+export default WithServer;

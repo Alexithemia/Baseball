@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 import Serverless from '../../containers/Serverless';
 import WithRedux from '../../containers/WithRedux';
+import WithServer from '../../containers/WithServer';
 import Navigation from '../../components/Navigation';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Switch>
               <Route exact={true} path='/' component={Serverless} />
               <Route exact={true} path='/withredux' component={WithRedux} />
+              <Route exact={true} path='/withserver' component={WithServer} />
             </Switch>
           </div>
         </>

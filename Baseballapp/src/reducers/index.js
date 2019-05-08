@@ -1,4 +1,4 @@
-import { OUT, RUN, NEW_GAME } from '../actions';
+import { OUT, RUN, NEW_GAME, OUT_SERVER, RUN_SERVER } from '../actions';
 
 const initialState = {
   visitorTotal: 0,
@@ -41,6 +41,10 @@ const reducer = (state = initialState, action) => {
         gamePosition: 0,
         gameEnd: false
       });
+    case OUT_SERVER:
+      return Object.assign({}, state, action.payload.data);
+    case RUN_SERVER:
+      return Object.assign({}, state, action.payload.data);
     default:
       return state;
   }
